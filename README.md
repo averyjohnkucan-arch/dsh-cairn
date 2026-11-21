@@ -16,7 +16,7 @@ For the DSH web profile, the equivalent CLI command is
 dsh plugin --profile web add https://github.com/averyjohnkucan-arch/dsh-cairn
 ```
 
-Open a new chat in that profile. The bundle appears as **Cairn boards** and uses your existing model configuration. It ships ready-to-load JavaScript. The standard DSH web profile supplies the Cordis `tools` and `storageDomain` services.
+After a CLI install, start or restart `dsh web`. Open a new chat in that profile. The bundle appears as **Cairn boards** and uses your existing model configuration. It ships ready-to-load JavaScript. The standard DSH web profile supplies the Cordis `tools` and `storageDomain` services. Tested with DSH 0.2.2-rc.4.
 
 ## Try it
 
@@ -39,7 +39,9 @@ The starting and goal facts are named `origin` and `goal`. Showing the board ret
 
 Boards persist in the host’s configured Harness storage backend. Chats with the same working directory see the same boards on that host. A chat with no working directory gets its own boards. To move one, ask for a YAML export and paste the YAML into a chat in the destination workspace.
 
-The importer accepts the project, facts, hints, and intents from Cairn’s YAML export, up to 1 MiB per import. It preserves multiple source facts, pending and concluded intents, and their author and timestamp fields. Cairn omits intent IDs from its YAML, so the plugin assigns display IDs in export order. Newly recorded timestamps use UTC. Worker names and bootstrap settings in imported snapshots are historical data. The tools store and display board entries locally. Proposed steps stay on the board for a person to carry out.
+The importer accepts the project, facts, hints, and intents from Cairn’s YAML export, up to 1 MiB per import. It preserves multiple source facts, pending and concluded intents, and their author and timestamp fields. Cairn omits intent IDs from its YAML, so the plugin assigns display IDs in export order. Newly recorded timestamps use UTC. Board content retrieved in chat enters the context of that chat’s configured model.
+
+Proposed steps stay on the board for a person to carry out. Worker names and bootstrap settings in imported snapshots are historical data.
 
 ## Development
 
