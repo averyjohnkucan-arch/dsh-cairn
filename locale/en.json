@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Cairn boards",
+    "description": "Ask in chat to create a Cairn board. Record facts and hints, link proposed steps to evidence, and import or export Cairn YAML. Chats in the same working directory share saved boards."
+  }
+}
